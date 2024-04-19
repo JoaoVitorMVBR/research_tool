@@ -66,9 +66,8 @@ export const Results = () => {
     case '/search/videos':
       return (
         <div className="flex flex-wrap ">
-          {results?.data?.map((url, index) => (
+          {results?.data?.map(({url, image}, index) => (
             <div key={index} className="p-2">
-              {console.log(url?.url)}
               <ReactPlayer url={url?.url} controls width="355px" height="200px" />
             </div>
           ))}

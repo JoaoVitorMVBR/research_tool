@@ -17,7 +17,7 @@ export const ResultContextProvider = ({ children }) => {
         const response = await fetch(`${baseUrl}${type}`, {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'ab7d19935emsh588df822676797bp1458b7jsn677ab6dcd1bd',
+                'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
                 'X-RapidAPI-Host': 'duckduckgo10.p.rapidapi.com'
             }
         });
@@ -26,6 +26,7 @@ export const ResultContextProvider = ({ children }) => {
 
         setResults(data);
         setIsLoading(false);
+        console.log(data);
     }
 
     return(
