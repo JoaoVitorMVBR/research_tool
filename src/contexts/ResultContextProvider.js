@@ -6,7 +6,7 @@ const baseUrl = 'https://duckduckgo10.p.rapidapi.com';
 export const ResultContextProvider = ({ children }) => {
     const [results, setResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [searchTerm, setSearchTerm] = useState('Elon musk');
+    const [searchTerm, setSearchTerm] = useState('');
 
     const getResults = async(type) => {
 
@@ -17,7 +17,7 @@ export const ResultContextProvider = ({ children }) => {
         const response = await fetch(`${baseUrl}${type}`, {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
+                'X-RapidAPI-Key': 'd22ae27255msh6a6c855dde5dbe1p1a8836jsn7c6bb43d7857',
                 'X-RapidAPI-Host': 'duckduckgo10.p.rapidapi.com'
             }
         });
